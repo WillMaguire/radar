@@ -20,16 +20,34 @@ function areTheseArraysTheSame() {
       console.log("id added or missing");
     }
       tempArr = [];
-      tempObj1 = {tempArr: inputs[i]}
-      tempObj2= {tempArr: outputs[i]}
+      tempObj = {};
+      var j = 0;
         for (var i = 0; i < inputs.length; i++) {
-          tempArr.push(inputs[i]);
+          if (tempObj[inputs[i]] !== tempObj[outputs[i]]) {
+              console.log(inputs[i]);
+              return "no"
         }
-      if (tempObj1 != tempObj2) {
-      console.log(tempArr);
-  }
+        tempArr.push(inputs[i]);
+    }
+    return "yes"
 };
 
+// var arr = [[1], [2], [2], [3], [4], [4]]
+// function singleArraySort() {
+//     var tempObj = {};
+//     var tempArr = [];
+//     var j = 0;
+//     for(var i = 0; i < arr.length; i++) {
+//          if(tempObj[arr[i]] !== 1) {
+//                tempObj[arr[i]] = 1;
+//                tempArr[j++] = arr[i];
+//                console.log(tempObj);
+//          }
+//     }
+//     return tempArr;
+//     console.log(tempArr);
+// }
 
 
 console.log('Are the arrays the same (regardless of order)? : ' + areTheseArraysTheSame());
+// console.log(singleArraySort());
